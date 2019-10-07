@@ -25,7 +25,7 @@ exports.create = async (req, res) => {
         } else {
             return res.status(404).json({
                 msg: "This cat already exists."
-            })
+            });
         }
 
     } catch (error) {
@@ -36,19 +36,19 @@ exports.create = async (req, res) => {
 
 /*
     @desc Get all cats
-    @methode Get
+    @methode GET
     @route /cat/
 */
 exports.listCats = async (req, res) => {
     try {
-        const cats = await Cat.find()
+        const cats = await Cat.find();
         
         if(cats.length > 0) {
-            res.status(200).json(cats)
+            res.status(200).json(cats);
         } else {
             return res.status(404).json({
                 msg: "No cats found."
-            })
+            });
         }
         
     } catch (error) {
@@ -59,19 +59,19 @@ exports.listCats = async (req, res) => {
 
 /*
     @desc Get a cat by id
-    @methode Get
+    @methode GET
     @route /cat/:id
 */
 exports.showCat = async (req, res) => {
     try {
-        const cat = await Cat.findById(req.params.id)
+        const cat = await Cat.findById(req.params.id);
         
         if(cat) {
-            res.status(200).json(cat)
+            res.status(200).json(cat);
         } else {
             return res.status(404).json({
                 msg: "No cat found."
-            })
+            });
         }
         
     } catch (error) {
@@ -80,3 +80,31 @@ exports.showCat = async (req, res) => {
     }
 }
 
+/*
+    @desc Update a cat by id
+    @methode PUT
+    @route /cat/:id
+*/
+exports.updateCat = async (req, res) => {
+    try {
+        const cat = await Cat.findById(req.params.id);
+        const { id, imageUrl, score } = req.body;
+
+        if(id && id != cat.id) cat.id = id;
+        if(imageUrl && imageUrl != cat.imageUrl) cat.imageUrl = imageUrl;
+        if(score && score != cat.score) cat.score = score;
+
+        if(cat) {
+            await cat.save();
+            res.status(200).json(cat);
+        } else {
+            return res.status(404).json({
+                msg: "No cat found."
+            });
+        }
+        
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send('Erreur serveur');
+    }
+}
