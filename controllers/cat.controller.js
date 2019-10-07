@@ -41,7 +41,7 @@ exports.create = async (req, res) => {
 */
 exports.listCats = async (req, res) => {
     try {
-        const cats = await Cat.find();
+        const cats = await Cat.find().sort({score: -1});
         
         if(cats.length > 0) {
             res.status(200).json(cats);
