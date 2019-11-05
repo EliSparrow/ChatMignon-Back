@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json({extended: false}));
 
-var allowedOrigins = ['http://localhost:3000','http://localhost:3001'];
+var allowedOrigins = ['http://localhost:3000','http://localhost:3001','https://catmash2.netlify.com'];
 app.use(cors({
     origin: function(origin, callback) {
         if (!origin)

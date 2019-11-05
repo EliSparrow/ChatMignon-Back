@@ -7,8 +7,9 @@ Version live :
 Lien live de l'API :
 [Catmash-API](https://api-catmash.herokuapp.com/)
 
-Repo Server :
-[MeetMeal-Server](https://github.com/EliSparow/MeetMeal-server)
+Repos :
+- [Catmash-Server](https://github.com/EliSparow/ChatMignon-Back)
+- [Catmash-Client]()
 
 Réalisé par :
 - Max de PONFILLY [EliSparow](https://github.com/elisparow)
