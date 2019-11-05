@@ -8,7 +8,7 @@ const app = express();
 
 
 
-// File import
+// Files import
 const connectDb = require("./config/connectDb");
 const cat = require('./routes/cat.route');
 
@@ -41,15 +41,13 @@ app.use(cors({
     }
 }));
 
-// Test API
-app.get('/', (req,res) => {
-    res.send("API is running")
-})
+// Routes
+    // Test API
+    app.get('/', (req,res) => {
+        res.send("API is running")
+    })
 
-app.use("/cats", cat);
-// app.use("/events", event);
-// app.use("/search", search);
-// app.use("/orders", order);
+    app.use("/cats", cat);
 
 app.listen(port, () => console.log(`Server run on port ${port}.`));
 
