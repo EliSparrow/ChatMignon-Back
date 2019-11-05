@@ -2,13 +2,14 @@
 ### Micro API pour Catmash de l'Atelier
 
 Version live :
-[Catmash](https://meetmeal.netlify.com/)
+[Catmash](https://catmash2.netlify.com/)
 
 Lien live de l'API :
 [Catmash-API](https://api-catmash.herokuapp.com/)
 
-Repo Server :
-[MeetMeal-Server](https://github.com/EliSparow/MeetMeal-server)
+Repos :
+- [Catmash-Server](https://github.com/EliSparow/ChatMignon-Back)
+- [Catmash-Client](https://github.com/EliSparow/ChatMignon-Front)
 
 Réalisé par :
 - Max de PONFILLY [EliSparow](https://github.com/elisparow)
